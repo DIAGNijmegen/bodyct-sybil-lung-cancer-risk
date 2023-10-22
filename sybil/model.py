@@ -9,7 +9,7 @@ import pickle
 
 from sybil.serie import Serie
 from sybil.models.sybil import SybilNet
-from sybil.utils.metrics import get_survival_metrics
+from sybil.utils2.metrics import get_survival_metrics
 
 
 NAME_TO_FILE = {

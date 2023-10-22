@@ -7,7 +7,7 @@ import pydicom
 import torchio as tio
 
 from sybil.datasets.utils import order_slices, VOXEL_SPACING
-from sybil.utils.loading import get_sample_loader
+from sybil.utils2.loading import get_sample_loader
 
 
 class Meta(NamedTuple):
@@ -134,7 +134,10 @@ class Serie:
         input_dicts = [self._loader.get_image(path, sample) for path in self._meta.paths]
         
         x = torch.cat( [i["input"].unsqueeze(0) for i in input_dicts], dim = 0)
+        #x = torch.cat([torch.from_numpy(i["input"]).unsqueeze(0) for i in input_dicts], dim = 0)
+        #x = x.unsqueeze(0)
         
+
         # Convert from (T, C, H, W) to (C, T, H, W)
         x = x.permute(1, 0, 2, 3)
 
