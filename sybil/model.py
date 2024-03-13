@@ -12,7 +12,7 @@ import pickle
 
 from sybil.serie import Serie
 from sybil.models.sybil import SybilNet
-from sybil.utils.metrics import get_survival_metrics
+from sybil.utils2.metrics import get_survival_metrics
 
 
 # Leaving this here for a bit; these are IDs to download the models from Google Drive
@@ -419,3 +419,4 @@ class Sybil:
         c_index = float(out["c_index"])
 
         return Evaluation(auc=auc, c_index=c_index, scores=scores, attentions=predictions.attentions)
+
