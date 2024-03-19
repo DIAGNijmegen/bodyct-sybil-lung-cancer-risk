@@ -102,7 +102,10 @@ for subfolder in subfolders:
         dcm_filepaths = get_dcm_filepaths(subfolder)
         serie = Serie(dcm_filepaths)
         scores = model.predict([serie])
+        scores = model.predict([serie], return_attentions=True)
+        attentions = scores.attentions
         print(scores)
+        print(attentions)
         folder_type = os.path.basename(os.path.normpath(ParentDirectory))
         data_dict = collectscores(subfolder, scores)
         save_data_as_csv(data_dict, csvoutput)
@@ -112,3 +115,12 @@ for subfolder in subfolders:
 
 end_time_model = time.time()
 print(f"Time taken for my_function: {end_time_model - start_time_model} seconds")
+
+from sybil import visualize_attentions
+
+series_with_attention = visualize_attentions(
+    series,
+    attentions = attentions,
+    save_directory = "path_to_save_directory",
+    gain = 3, 
+)
