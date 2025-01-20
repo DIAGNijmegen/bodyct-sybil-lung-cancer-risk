@@ -15,10 +15,10 @@ def _get_parser():
     parser = argparse.ArgumentParser(description=__doc__)
 
     parser.add_argument(
-        "image_dir",
+        "--image_dir",
         default=None,
-        help="Path to directory containing DICOM/PNG files (from a single exam) to run inference on."
-             "Every file in the directory will be included.",
+        #help="Path to directory containing DICOM/PNG files (from a single exam) to run inference on"
+        #"Every file in the directory will be included.",
     )
 
     parser.add_argument(
@@ -31,7 +31,7 @@ def _get_parser():
 
     parser.add_argument(
         "--return-attentions",
-        default=False,
+        default=True,
         action="store_true",
         help="Generate an image which overlaps attention scores.",
     )

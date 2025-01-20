@@ -11,10 +11,10 @@ from sybil import visualize_attentions
 ParentDirectory = r"/data/bodyct/experiments/Sybil_Fennie/DLCST/DICOM_files/indeterminate_nodules"
 
 #Name of the output csv file
-csvoutput = r"/data/bodyct/experiments/Sybil_Fennie/DLCST/Ensemble_Sybil/indeterminate_sybil.csv"
+csvoutput = r"/data/bodyct/experiments/kristina_sybil/temp/temp2.csv"
 #csvattentionoutput = r"/mnt/netcache/bodyct/experiments/Sybil_Fennie/DLCST/attention/output_attention_scores7.csv"
 
-log_file = r"/data/bodyct/experiments/Sybil_Fennie/Sybil_Fennie/DLCST/Ensemble_Sybil/all_cases/log2.txt"
+log_file = r"/data/bodyct/experiments/kristina_sybil/temp/log2.txt"
 
 start_time_model = time.time()
 # Load a trained model
